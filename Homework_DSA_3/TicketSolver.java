@@ -49,7 +49,6 @@ public class TicketSolver {
 
             int option1 = dp[i - 1] + 2;
             int option2 = dp[Math.max(0, i - 7)] + 7;
-            int option3 = dp[Math.max(0, i - 30)] + 25;
 
             dp[i] = Math.min(option1, Math.min(option2, option3));
         }
@@ -68,7 +67,6 @@ public class TicketSolver {
         // if (idx < dates.length && i == dates[idx]) {
         // int option1 = dp[i - 1] + 2;
         // int option2 = dp[Math.max(0, i - 7)] + 7;
-        // int option3 = dp[Math.max(0, i - 30)] + 25;
 
         // dp[i] = Math.min(option1, Math.min(option2, option3));
         // idx++;
