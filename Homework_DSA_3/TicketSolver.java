@@ -10,17 +10,26 @@ public class TicketSolver {
 
         // int[] dates = { 30, 29, 28, 27, 26, 25, 24 }; // result: 7
 
+        // int[] dates = {}; // result: error
+
         // Test Case: 3 travel days within a 1 year (totalDays = 365)
         // int totalDays = 365;
         // int[] dates = { 10, 150, 360 }; // result: 6
 
         int result = buyTickets(dates, totalDays);
 
-        System.out.println("Minimum cost: $" + result);
-
+        if (result == -1) {
+            System.out.println("Input Error");
+        } else {
+            System.out.println("Minimum cost: $" + result);
+        }
     }
 
     public static int buyTickets(int[] dates, int totalDays) {
+        if (totalDays <= 0 || dates == null || dates.length == 0) {
+            return -1;
+        }
+
         int[] dayMap = new int[totalDays + 1];
         int[] dp = new int[totalDays + 1];
 
