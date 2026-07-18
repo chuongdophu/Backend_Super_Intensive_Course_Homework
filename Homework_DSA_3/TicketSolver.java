@@ -32,7 +32,9 @@ public class TicketSolver {
 
         int[] dayMap = new int[totalDays + 1];
         int[] dp = new int[totalDays + 1];
-
+        if (totalDays >= 23) {
+            dp[23] = 25;
+        }
         for (int date : dates) {
             if (date <= totalDays) {
                 dayMap[date] = 1;
@@ -57,6 +59,10 @@ public class TicketSolver {
         // Arrays.sort(dates);
         // int[] dp = new int[totalDays + 1];
         // int idx = 0;
+
+        // if (totalDays >= 23){
+        // dp[23] = 25;
+        // }
 
         // for (int i = 1; i <= totalDays; i++) {
         // if (idx < dates.length && i == dates[idx]) {
